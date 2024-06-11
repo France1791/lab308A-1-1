@@ -1,10 +1,16 @@
-let globalCounter = 0
-function increments(Number)
-{
-     for(i = 0; i <= 15; i++)
-{
-    console.log(i);
-}
+
+
+let globalCounter = 0; 
+function increments(){
+    globalCounter++
+    console.log(globalCounter);
+    increments();
 }
 
-increments(globalCounter);
+try{
+    increments();
+}catch(error){
+    console.log("Maximum call stack size exceeded at: ",globalCounter)
+}
+
+
